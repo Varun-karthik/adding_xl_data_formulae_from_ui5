@@ -1,0 +1,185 @@
+<mvc:View controllerName="com.ssmc.createordexcptnsom.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:fb="sap.ui.comp.filterbar">
+    <Page id="page" title="{i18n>title}" titleAlignment="Center">
+        <content>
+            <fb:FilterBar persistencyKey="myPersKey" useToolbar="false" search="readTableData"
+                filterChange=".onFilterChange" showFilterConfiguration="false" showClearOnFB="true"
+                clear="clearFilters" showGoOnFB="true">
+                <fb:filterGroupItems>
+                    <fb:FilterGroupItem name="oaExceptionRequest" label="OA Exception Request"
+                        groupName="A" visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="oaExceptionRequest" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem name="vendorCode" label="Vendor Code" groupName="A"
+                        visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="vendorCode" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem name="approvedDate" label="Approved Date" groupName="A"
+                        visibleInFilterBar="true">
+                        <fb:control>
+                            <DatePicker id="approvedDate" displayFormat="dd MMM yyyy"
+                                valueFormat="yyyy-MM-dd" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem name="status" label="Status" groupName="A"
+                        visibleInFilterBar="true">
+                        <fb:control>
+                            <!-- <Input id="status" /> -->
+                            <MultiComboBox id="status" items="{statusModel>/}">
+                                <core:Item key="{statusModel>Yystatus}"
+                                    text="{statusModel>Yystatus}" />
+                            </MultiComboBox>
+                        </fb:control>
+                    </fb:FilterGroupItem>
+
+                    <!-- Column Group 2 (Middle) -->
+                    <fb:FilterGroupItem name="requestType" label="Request Type" groupName="A"
+                        visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="requestType" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem name="poNumber" label="PO number" groupName="A"
+                        visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="poNumber" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem name="buyer" label="Buyer" groupName="A"
+                        visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="buyerName" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem name="vendorName" label="Vendor Name" groupName="A"
+                        visibleInFilterBar="true">
+                        <fb:control>
+                            <Input id="vendorName" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem name="dateFrom" label="Date from" groupName="A"
+                        visibleInFilterBar="true">
+                        <fb:control>
+                            <DatePicker id="dateFrom" displayFormat="dd MMM yyyy"
+                                valueFormat="yyyy-MM-dd" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                    <fb:FilterGroupItem name="dateTo" label="Date to" groupName="A"
+                        visibleInFilterBar="true">
+                        <fb:control>
+                            <DatePicker id="dateTo" displayFormat="dd MMM yyyy"
+                                valueFormat="yyyy-MM-dd" />
+                        </fb:control>
+                    </fb:FilterGroupItem>
+                </fb:filterGroupItems>
+            </fb:FilterBar>
+
+            <!-- <Table id="mainTableId" growing="true" growingThreshold="9999" items="{mainDataModel>/}">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <ToolbarSpacer />
+                        <Button text="Create OA Exception" type="Emphasized"
+                            press="onCreateExceptionPress" />
+                        <Button text="Export" type="Transparent" press="onExportExcel"
+                            icon="sap-icon://download" />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Date" />
+                    </Column>
+                    <Column>
+                        <Text text="OA Exception Request" />
+                    </Column>
+                    <Column>
+                        <Text text="Request Type" />
+                    </Column>
+                    <Column>
+                        <Text text="Vendor Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Vendor Code" />
+                    </Column>
+                    <Column>
+                        <Text text="PO Number" />
+                    </Column>
+                    <Column>
+                        <Text text="Approved Date" />
+                    </Column>
+                    <Column>
+                        <Text text="Buyer" />
+                    </Column>
+                    <Column>
+                        <Text text="Status" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" press="onLineItemPress" vAlign="Middle">
+                        <cells>
+
+                            <Text
+                                text="{path: 'mainDataModel>Yycrdate', formatter: '.formatter.formatDate'}" />
+                            <Text text="{mainDataModel>YyoaExpReqNo}" />
+                            <Text text="{mainDataModel>YyreqType}" />
+                            <Text text="{mainDataModel>YysupplierName}" />
+                            <Text text="{mainDataModel>Yysupplier}" />
+                            <Text text="{mainDataModel>YypoNum}" />
+                            <Text
+                                text="{path: 'mainDataModel>Yapproveddate', formatter: '.formatter.formatDate'}" />
+                            <Text text="{mainDataModel>Yycrdby}" />
+                            <Text text="{mainDataModel>Yystatus}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table> -->
+            
+            <Table id="mainTableId" growing="true" growingThreshold="9999" items="{oaExceptionModel>/}">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <ToolbarSpacer />
+                        <Button text="Create OA Exception" type="Emphasized" press="onCreateExceptionPress" />
+                        <Button text="Export" type="Transparent" press="onExportExcel" icon="sap-icon://download" />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column><Text text="Date" /></Column>
+                    <Column><Text text="OA Exception Request" /></Column>
+                    <Column><Text text="Request Type" /></Column>
+                    <Column><Text text="Vendor Name" /></Column>
+                    <Column><Text text="Vendor Code" /></Column>
+                    <Column><Text text="PO Number" /></Column>
+                    <Column><Text text="Approved Date" /></Column>
+                    <Column><Text text="Buyer" /></Column>
+                    <Column><Text text="Status" /></Column>
+                    <Column><Text text="WholeSale Price" /></Column>
+                    <Column><Text text="MRP" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" press="onLineItemPress" vAlign="Middle">
+                        <cells>
+                            <Text text="{path: 'oaExceptionModel>Yycrdate', formatter: '.formatter.formatDate'}" />
+                            <Text text="{oaExceptionModel>YyoaExpReqNo}" />
+                            <Text text="{oaExceptionModel>YyreqType}" />
+                            <Text text="{oaExceptionModel>YysupplierName}" />
+                            <Text text="{oaExceptionModel>Yysupplier}" />
+                            <Text text="{oaExceptionModel>YypoNum}" />
+                            <Text text="{path: 'oaExceptionModel>Yapproveddate', formatter: '.formatter.formatDate'}" />
+                            <Text text="{oaExceptionModel>Yycrdby}" />
+                            <Text text="{oaExceptionModel>Yystatus}" />
+                            <Text text="{oaExceptionModel>YyWSP}" />
+                            <Text text="{oaExceptionModel>YyMRP}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+        </content>
+    </Page>
+</mvc:View>

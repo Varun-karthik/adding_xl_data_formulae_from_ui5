@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog id="poDialog" title="PO List" afterClose=".onPODialogClose">
+        <!-- Search Field -->
+        <SearchField width="100%" search="onPOValueHelpSearch" placeholder="Search" />
+        <!-- Vendor List -->
+        <List id="poList" growing="true" growingThreshold="99999" mode="MultiSelect" includeItemInSelection="true" items="{poModel>/}">
+            <StandardListItem title="{poModel>Ebeln}"/>
+        </List>
+        <!-- Footer Buttons -->
+        <buttons>
+            <Button text="Select All" press=".onSelectAllPO" type="Emphasized"/>
+            <Button text="OK" press="onPOConfirm" type="Emphasized"/>
+            <Button text="Cancel" press=".onPOCancel" type="Transparent" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

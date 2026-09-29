@@ -1,0 +1,226 @@
+<mvc:View controllerName="com.ssmc.createordexcptnsom.controller.Create"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:u="sap.ui.unified">
+    <Page title="Details" titleAlignment="Center">
+        <content>
+            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="2"
+                labelSpanM="2" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="1"
+                emptySpanL="1" emptySpanM="0" columnsXL="1" columnsL="1" columnsM="1">
+                <f:content>
+                    <Label text="Select Request Type" required="true"></Label>
+                    <Select id="rqstType" forceSelection="false" width="25%"
+                        change="onRqstTypeSelect">
+                        <items>
+                            <core:Item key="Vendor" text="Vendor"></core:Item>
+                            <core:Item key="PO" text="PO"></core:Item>
+                        </items>
+                    </Select>
+                </f:content>
+            </f:SimpleForm>
+            <VBox visible="{viewRqstModel>/vendorType}" class="sapUiTinyMarginTop" width="100%"
+                height="100%">
+                <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="4"
+                    labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="1"
+                    emptySpanL="1" emptySpanM="0" columnsXL="2" columnsL="2" columnsM="2">
+                    <f:content>
+                        <core:Title />
+                        <Label text="OA Exception Request" />
+                        <Input editable="false" value="{LocalDataModel>/YyoaExpReqNo}" />
+                        <Label text="Status" />
+                        <Input editable="false" value="{LocalDataModel>/Yystatus}" />
+                        <core:Title />
+                        <Label text="Vendor Code" />
+                        <!-- <Input value="{LocalDataModel>/Yysupplier}" /> -->
+                        <Input id="vendorsId" value="{LocalDataModel>/Yysupplier}"
+                            valueHelpOnly="true" showValueHelp="true"
+                            valueHelpRequest="onVendorValueHelp" />
+                        <Label text="Vendor Name" />
+                        <Input id="vendorNameId" editable="false"
+                            value="{LocalDataModel>/YysupplierName}" />
+                    </f:content>
+                </f:SimpleForm>
+                <f:SimpleForm visible="true" layout="ResponsiveGridLayout"
+                    labelSpanL="12"
+                    labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+                    emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1"
+                    columnsM="2"
+                    singleContainerFullSize="true">
+                    <f:content>
+                        <Label text="Waiver Justification (Vendor Code)" />
+                        <TextArea value="{LocalDataModel>/YywavJust}" rows="4" maxLength="2000"
+                        />
+                        <Label text="Waiver Attachment (Vendor Code)" />
+                        <Table
+                            items="{path: 'LocalDataModel>/AttachmentSet'}"
+                            mode="Delete" delete="onDeleteAttach">
+                            <headerToolbar>
+                                <Toolbar>
+                                    <ToolbarSpacer></ToolbarSpacer>
+                                    <u:FileUploader id="venCodeAttachmentID"
+                                        change="onUploadVendorCode" multiple="true"
+                                        buttonOnly="true" buttonText="Choose File" />
+                                </Toolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column>
+                                    <Text text="File Name" />
+                                </Column>
+                                <Column>
+                                    <Text text="Download" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Link text="{LocalDataModel>Filename}"
+                                            press="onPreviewAttachment" />
+                                        <Button icon="sap-icon://download"
+                                            press="onDownload" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+            <VBox visible="{viewRqstModel>/poType}" class="sapUiTinyMarginTop" width="100%"
+                height="100%">
+                <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="4"
+                    labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="1"
+                    emptySpanL="1" emptySpanM="0" columnsXL="2" columnsL="2" columnsM="2">
+                    <f:content>
+                        <core:Title />
+                        <Label text="OA Exception Request" />
+                        <Input editable="false" value="{LocalDataModel>/YyoaExpReqNo}" />
+                        <Label text="Status" />
+                        <Input editable="false" value="{LocalDataModel>/Yystatus}" />
+                        <core:Title />
+                        <Label text="PO Number" />
+                        <!-- <Input  value="{LocalDataModel>/Yysupplier}" /> -->
+                        <MultiInput id="poId" valueHelpOnly="true" showValueHelp="true"
+                            valueHelpRequest="onPOValueHelp" tokenUpdate="onPOTokenUpdate" />
+                        <Label text="Buyer" />
+                        <Input value="{globalModel>/loggedInEmail}" editable="false" />
+                    </f:content>
+                </f:SimpleForm>
+                <f:SimpleForm visible="true" layout="ResponsiveGridLayout" labelSpanL="12"
+                    labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+                    emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1"
+                    columnsM="2"
+                    singleContainerFullSize="true">
+                    <f:content>
+                        <Label text="Waiver Justification (PO Number)" />
+                        <TextArea value="{LocalDataModel>/YywavJust}" rows="4" maxLength="2000"
+                        />
+                        <Label text="Waiver Attachment (PO Number)" />
+                        <Table items="{path: 'LocalDataModel>/AttachmentSet'}"
+                            mode="Delete" delete="onDeleteAttach">
+                            <headerToolbar>
+                                <Toolbar>
+                                    <ToolbarSpacer></ToolbarSpacer>
+                                    <u:FileUploader id="poAttachmentID"
+                                        change="onUploadpoAttachment" multiple="true"
+                                        buttonOnly="true" buttonText="Choose File" />
+                                </Toolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column>
+                                    <Text text="File Name" />
+                                </Column>
+                                <Column>
+                                    <Text text="Download" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Link text="{LocalDataModel>Filename}"
+                                            press="onPreviewAttachment" />
+                                        <Button icon="sap-icon://download"
+                                            press="onDownload" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                        <Label text="PO Details" />
+                        <Table growing="true" growingThreshold="50"
+                            items="{poDetailsModel>/}">
+                            <columns>
+                                <Column>
+                                    <Text text="Line Item" />
+                                </Column>
+                                <Column>
+                                    <Text text="Supplier Name" />
+                                </Column>
+                                <Column>
+                                    <Text text="PO no." />
+                                </Column>
+                                <Column>
+                                    <Text text="SSMC Part Number" />
+                                </Column>
+                                <Column>
+                                    <Text text="MPN Number" />
+                                </Column>
+                                <Column>
+                                    <Text text="Supplier Part Number" />
+                                </Column>
+                                <Column>
+                                    <Text text="Part Description" />
+                                </Column>
+                                <Column>
+                                    <Text text="Ordered Qty" />
+                                </Column>
+                                <Column>
+                                    <Text text="U/M" />
+                                </Column>
+                                <Column>
+                                    <Text text="Unit Price" />
+                                </Column>
+                                <Column>
+                                    <Text text="Amount" />
+                                </Column>
+                                <Column>
+                                    <Text text="Delivery Date" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{poDetailsModel>YypoLine}" />
+                                        <Text text="{poDetailsModel>YysupplierName}" />
+                                        <Text text="{poDetailsModel>YypoNum}" />
+                                        <Text text="{poDetailsModel>YyssmcPartNo}" />
+                                        <Text text="{poDetailsModel>YympnNo}" />
+                                        <Text text="{poDetailsModel>YysuppartNo}" />
+                                        <Text text="{poDetailsModel>YypartDesc}" />
+                                        <Text text="{poDetailsModel>YyorderedQty}" />
+                                        <Text text="{poDetailsModel>Yyuom}" />
+                                        <Text text="{poDetailsModel>YyunitPrice}" />
+                                        <Text text="{poDetailsModel>Yyamount}" />
+                                        <Text
+                                            text="{path: 'poDetailsModel>YydeliveryDate', formatter: '.formatter.formatDate'}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </f:content>
+                </f:SimpleForm>
+
+            </VBox>
+        </content>
+        <footer>
+            <OverflowToolbar visible="{viewRqstModel>/footerBtns}">
+                <ToolbarSpacer />
+                <!-- <Button text="Cancel Exception" type="Reject" press="onSubmitPress"
+                    visible="{editableModel>/allowEdit}" /> -->
+                <Button text="Save" type="Default" press="onSavePress" />
+                <Button text="Submit" type="Accept" press="onSubmitPress" />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View> 

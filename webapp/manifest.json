@@ -1,0 +1,157 @@
+{
+  "_version": "1.60.0",
+  "sap.app": {
+    "id": "com.ssmc.createordexcptnsom",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.31.1",
+      "toolsId": "e585653c-b74f-4394-939b-a83552272a77"
+    },
+    "dataSources": {
+      "YAPI_SUPPLIER_ORDER_MAN_ANNO_MDL": {
+        "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='YAPI_SUPPLIER_ORDER_MAN_ANNO_MDL',Version='0001')/$value/",
+        "type": "ODataAnnotation",
+        "settings": {
+          "localUri": "localService/mainService/YAPI_SUPPLIER_ORDER_MAN_ANNO_MDL.xml"
+        }
+      },
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [
+            "YAPI_SUPPLIER_ORDER_MAN_ANNO_MDL"
+          ],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.120.23",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.export":{}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.ssmc.createordexcptnsom.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ],
+      "js": [
+        {
+          "uri": "libs/jszip.js"
+        },
+        {
+          "uri": "libs/xlsx.js"
+        },
+        {
+            "uri": "libs/exceljs.min.js"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.ssmc.createordexcptnsom.view",
+        "async": true,
+        "viewPath": "com.ssmc.createordexcptnsom.view"
+      },
+      "routes": [
+        {
+          "name": "RouteMain",
+          "pattern": ":?query:",
+          "target": [
+            "TargetMain"
+          ]
+        },
+        {
+          "name": "Details",
+          "pattern": "Details/{oaExcNum}/{rqstType}/{status}",
+          "target": [
+            "DetailPage"
+          ]
+        },
+        {
+          "name": "Create",
+          "pattern": "Create/:oaExcNum:/:rqstType:/:status:",
+          "target": [
+            "CreatePage"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetMain": {
+          "id": "Main",
+          "name": "Main"
+        },
+        "DetailPage": {
+          "id": "Details",
+          "name": "Details"
+        },
+        "CreatePage": {
+          "id": "Create",
+          "name": "Create"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.ssmc.createordexcptnsom.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

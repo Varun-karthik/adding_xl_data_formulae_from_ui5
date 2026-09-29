@@ -1,0 +1,23 @@
+{
+  "generationParameters": {
+    "generationDate": "Wed Sep 02 2026 06:59:41 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "http://s4hpdwdev:44320/sap/opu/odata/sap/YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV",
+    "appName": "createordexcptnsom",
+    "appTitle": "Create Order Exception",
+    "appDescription": "An SAP Fiori application for Creating Order Exception by Buyer.",
+    "appNamespace": "com.ssmc",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.120.23",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.31.1",
+    "template": "Basic V2",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}

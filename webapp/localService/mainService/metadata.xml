@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="OAInitialScreen" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Yysupplier"/>
+                    <PropertyRef Name="YypoNum"/>
+                </Key>
+                <Property Name="Yysupplier" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Supplier" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoNum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YysupplierName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Vendor Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="YypoTotValue" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:label="Net Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yybuyer" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Purch. Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Document Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yyincoterms" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Incoterms" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypaymentTerms" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Pyt Terms" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoValidity" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Validity End" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoAck" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="PO Acknowledgement" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyoaAckStatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Approval Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyprNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchase Req." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoType" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="PO Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdby" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="OAHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Yysupplier"/>
+                    <PropertyRef Name="YypoNum"/>
+                </Key>
+                <Property Name="YyresentRemarks" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Resent Back Remarks" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoAckDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Ack Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yysupplier" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Supplier" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoNum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YysupplierName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Vendor Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="YypoTotValue" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:label="Net Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yybuyer" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Purch. Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoHeaderNote" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="PO Header Note" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyvendorMemoGen" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Vendor Memo General" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Document Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yyincoterms" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Incoterms" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypaymentTerms" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Pyt Terms" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoValidity" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Validity End" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoAck" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="PO Acknowledgement" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyoaAckStatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Approval Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyprNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchase Req." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoType" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="PO Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyvendorEmail" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="E-Mail Address" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyccEmail" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Email Recipient" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyexpNotesBuyer" Type="Edm.String" Nullable="false" MaxLength="500" sap:unicode="false" sap:label="Expedite Notes (Buye" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyexpRemainder" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Expedite Reminder" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Creation Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrtime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Creation Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdby" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="OAHeaderToItemNav" Relationship="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.OAHeaderToItem" FromRole="FromRole_OAHeaderToItem" ToRole="ToRole_OAHeaderToItem"/>
+            </EntityType>
+            <EntityType Name="OAItem" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Yysupplier"/>
+                    <PropertyRef Name="YypoNum"/>
+                    <PropertyRef Name="YypoLine"/>
+                </Key>
+                <Property Name="Yysupplier" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Supplier" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoNum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoLine" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyssmcPartNo" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YympnNo" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Mfr Part Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypartDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YysuppPartNo" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Supp. Mat. No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yyuom" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Order Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="YyorderedQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="PO Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyunitPrice" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="0" sap:unicode="false" sap:label="Price Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yyamount" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:unicode="false" sap:label="Net Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YydeliveryDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Delivery Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyopenQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyopenValue" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:unicode="false" sap:label="Net Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YysuppCommEta" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Supplier committed E" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yyremarks" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YybuyerExpEta" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Buyer expedited ETA" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyminQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Minimum Qty" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YymaxQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Max. Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YycurrConsQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Unrestricted" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YytopUpQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Top up QTY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yystatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Approval Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Creation Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrtime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Creation Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdby" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoLineStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyorderedQtyStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyamountStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyopenQtyStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyopenValueStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyminQtyStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YymaxQtyStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YycurrConsQtyStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YytopUpQtyStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="VendorEmail" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Yyemail"/>
+                </Key>
+                <Property Name="Yyemail" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SSMCEmpEmail" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Yyemail"/>
+                </Key>
+                <Property Name="Yyemail" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="OAChangeLog" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Yysupplier"/>
+                    <PropertyRef Name="YypoNum"/>
+                    <PropertyRef Name="YysubNo"/>
+                </Key>
+                <Property Name="Yysupplier" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Supplier" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoNum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YysubNo" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Process Sub Refernce" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YytriggerBy" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="E-Mail Address" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyvendorEmail" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="E-Mail Address" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyccEmail" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Email Recipient" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyexpRemainder" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Expedite Reminder" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Creation Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrtime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Creation Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yystatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Approval Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="AllClosedPOInitialScreen" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Yysupplier"/>
+                    <PropertyRef Name="YypoNum"/>
+                </Key>
+                <Property Name="Yysupplier" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Supplier" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoNum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YysupplierName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Vendor Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="YypoTotValue" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:label="Net Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yybuyer" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Purch. Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Document Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yyincoterms" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Incoterms" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypaymentTerms" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Pyt Terms" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoValidity" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Validity End" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoAck" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="PO Acknowledgement" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyoaAckStatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Approval Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyprNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchase Req." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoType" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="PO Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdby" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ExceptionInitialScreen" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="YyoaExpReqNo"/>
+                </Key>
+                <Property Name="YydateOfReqFrom" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Creation Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyoaExpReqNo" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="OA Exception Request" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YydateOfReqTo" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Creation Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyreqType" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Request Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yysupplier" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Supplier" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YysupplierName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Vendor Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoNum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yapproveddate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Approved Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yystatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Approval Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Creation Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yybuyer" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Purch. Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ExceptionByVendor" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="YyoaExpReqNo"/>
+                </Key>
+                <Property Name="YyoaExpReqNo" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="OA Exception Request" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyworkItem" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="Work Item Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yysupplier" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Supplier" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YysupplierName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Vendor Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YywavJust" Type="Edm.String" Nullable="false" MaxLength="500" sap:unicode="false" sap:label="Waiver Justification" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyrejectCmnts" Type="Edm.String" Nullable="false" MaxLength="500" sap:unicode="false" sap:label="Reject comments" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yystatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Approval Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Creation Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrtime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Creation Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdby" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyreqType" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Request Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ExceptionByVendorToAttachNav" Relationship="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByVendorToAttach" FromRole="FromRole_ExceptionByVendorToAttach" ToRole="ToRole_ExceptionByVendorToAttach"/>
+            </EntityType>
+            <EntityType Name="Attachments" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="YyreqId"/>
+                </Key>
+                <Property Name="YyreqId" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Char" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyattchId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Attachment ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yyattachment" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Answer Attachment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyfileName" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Attachement File Nam" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyfileType" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="File Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="VendorDropdown" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Lifnr"/>
+                </Key>
+                <Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Supplier" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="PODropdown" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Ebeln"/>
+                </Key>
+                <Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ExceptionByPOHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="YyoaExpReqNo"/>
+                </Key>
+                <Property Name="YyoaExpReqNo" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="OA Exception Request" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoNum" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="PO Numbers" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YywavJust" Type="Edm.String" Nullable="false" MaxLength="500" sap:unicode="false" sap:label="Waiver Justification" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyrejectCmnts" Type="Edm.String" Nullable="false" MaxLength="500" sap:unicode="false" sap:label="Reject comments" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yystatus" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Approval Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Creation Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrtime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Creation Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yycrdby" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyreqType" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Request Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yybuyer" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Purch. Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyworkItem" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="Work Item Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ExceptionByPOHeaderToAttachNav" Relationship="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByPOHeaderToAttach" FromRole="FromRole_ExceptionByPOHeaderToAttach" ToRole="ToRole_ExceptionByPOHeaderToAttach"/>
+                <NavigationProperty Name="ExceptionByPOHeaderToItemNav" Relationship="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByPOHeaderToItem" FromRole="FromRole_ExceptionByPOHeaderToItem" ToRole="ToRole_ExceptionByPOHeaderToItem"/>
+            </EntityType>
+            <EntityType Name="ExceptionByPOItem" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="YyoaExpReqNo"/>
+                    <PropertyRef Name="YypoNum"/>
+                    <PropertyRef Name="YypoLine"/>
+                </Key>
+                <Property Name="YyoaExpReqNo" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="OA Exception Request" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoNumStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="PO Numbers" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoLineStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyorderedQtyStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyamountStr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Remarks by SSMC" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypartDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yyuom" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Order Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyorderedQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="PO Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyunitPrice" Type="Edm.Decimal" Nullable="false" Precision="5" Scale="0" sap:unicode="false" sap:label="Price Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Yyamount" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:unicode="false" sap:label="Net Price" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YydeliveryDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Delivery Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YyssmcPartNo" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YympnNo" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Mfr Part Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YysuppPartNo" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Supp. Mat. No." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoNum" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Purchasing Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YypoLine" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="YysupplierName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Vendor Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="YCDS_OA_INITIALSCREENType" sap:label="OA Initial Screen" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ebeln"/>
+                </Key>
+                <Property Name="ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchasing Document" sap:quickinfo="Purchasing Document Number"/>
+                <Property Name="lifnr" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Supplier" sap:quickinfo="Supplier's Account Number"/>
+                <Property Name="name1" Type="Edm.String" MaxLength="35" sap:label="Name" sap:quickinfo="Name 1"/>
+                <Property Name="waers" Type="Edm.String" MaxLength="5" sap:display-format="UpperCase" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/>
+                <Property Name="ekgrp" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Purchasing Group"/>
+                <Property Name="bedat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Document Date" sap:quickinfo="Purchasing Document Date"/>
+                <Property Name="inco1" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Incoterms" sap:quickinfo="Incoterms (Part 1)"/>
+                <Property Name="zterm" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Terms of Payment" sap:quickinfo="Terms of Payment Key"/>
+                <Property Name="kdatb" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Validity Per. Start" sap:quickinfo="Start of Validity Period"/>
+                <Property Name="kdate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Validity Period End" sap:quickinfo="End of Validity Period"/>
+                <Property Name="bsart" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Purchasing Doc. Type" sap:quickinfo="Purchasing Document Type"/>
+                <Property Name="frgke" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Release indicator" sap:quickinfo="Release Indicator: Purchasing Document"/>
+                <Property Name="ebelp" Type="Edm.String" MaxLength="5" sap:display-format="NonNegative" sap:label="Item" sap:quickinfo="Item Number of Purchasing Document"/>
+                <Property Name="pstyp" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Item Category" sap:quickinfo="Item category in purchasing document"/>
+                <Property Name="banfn" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchase Requisition" sap:quickinfo="Purchase Requisition Number"/>
+                <Property Name="total" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="waers"/>
+            </EntityType>
+            <Association Name="ExceptionByVendorToAttach" sap:content-version="1">
+                <End Type="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByVendor" Multiplicity="1" Role="FromRole_ExceptionByVendorToAttach"/>
+                <End Type="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.Attachments" Multiplicity="*" Role="ToRole_ExceptionByVendorToAttach"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ExceptionByVendorToAttach">
+                        <PropertyRef Name="YyoaExpReqNo"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ExceptionByVendorToAttach">
+                        <PropertyRef Name="YyreqId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="OAHeaderToItem" sap:content-version="1">
+                <End Type="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.OAHeader" Multiplicity="1" Role="FromRole_OAHeaderToItem"/>
+                <End Type="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.OAItem" Multiplicity="*" Role="ToRole_OAHeaderToItem"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_OAHeaderToItem">
+                        <PropertyRef Name="YypoNum"/>
+                        <PropertyRef Name="Yysupplier"/>
+                    </Principal>
+                    <Dependent Role="ToRole_OAHeaderToItem">
+                        <PropertyRef Name="YypoNum"/>
+                        <PropertyRef Name="Yysupplier"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ExceptionByPOHeaderToItem" sap:content-version="1">
+                <End Type="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByPOHeader" Multiplicity="1" Role="FromRole_ExceptionByPOHeaderToItem"/>
+                <End Type="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByPOItem" Multiplicity="*" Role="ToRole_ExceptionByPOHeaderToItem"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ExceptionByPOHeaderToItem">
+                        <PropertyRef Name="YyoaExpReqNo"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ExceptionByPOHeaderToItem">
+                        <PropertyRef Name="YyoaExpReqNo"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ExceptionByPOHeaderToAttach" sap:content-version="1">
+                <End Type="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByPOHeader" Multiplicity="1" Role="FromRole_ExceptionByPOHeaderToAttach"/>
+                <End Type="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.Attachments" Multiplicity="*" Role="ToRole_ExceptionByPOHeaderToAttach"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ExceptionByPOHeaderToAttach">
+                        <PropertyRef Name="YyoaExpReqNo"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ExceptionByPOHeaderToAttach">
+                        <PropertyRef Name="YyreqId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="YCDS_OA_INITIALSCREEN" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.YCDS_OA_INITIALSCREENType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="OAInitialScreenSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.OAInitialScreen" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="OAHeaderSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.OAHeader" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="OAItemSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.OAItem" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="VendorEmailSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.VendorEmail" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SSMCEmpEmailSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.SSMCEmpEmail" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="OAChangeLogSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.OAChangeLog" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AllClosedPOInitialScreenSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.AllClosedPOInitialScreen" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ExceptionInitialScreenSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionInitialScreen" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ExceptionByVendorSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByVendor" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="AttachmentsSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.Attachments" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="VendorDropdownSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.VendorDropdown" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PODropdownSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.PODropdown" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ExceptionByPOHeaderSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByPOHeader" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ExceptionByPOItemSet" EntityType="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByPOItem" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="OAHeaderToItemSet" Association="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.OAHeaderToItem" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="OAHeaderSet" Role="FromRole_OAHeaderToItem"/>
+                    <End EntitySet="OAItemSet" Role="ToRole_OAHeaderToItem"/>
+                </AssociationSet>
+                <AssociationSet Name="ExceptionByPOHeaderToAttachSet" Association="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByPOHeaderToAttach" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ExceptionByPOHeaderSet" Role="FromRole_ExceptionByPOHeaderToAttach"/>
+                    <End EntitySet="AttachmentsSet" Role="ToRole_ExceptionByPOHeaderToAttach"/>
+                </AssociationSet>
+                <AssociationSet Name="ExceptionByPOHeaderToItemSet" Association="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByPOHeaderToItem" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ExceptionByPOHeaderSet" Role="FromRole_ExceptionByPOHeaderToItem"/>
+                    <End EntitySet="ExceptionByPOItemSet" Role="ToRole_ExceptionByPOHeaderToItem"/>
+                </AssociationSet>
+                <AssociationSet Name="ExceptionByVendorToAttachSet" Association="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.ExceptionByVendorToAttach" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ExceptionByVendorSet" Role="FromRole_ExceptionByVendorToAttach"/>
+                    <End EntitySet="AttachmentsSet" Role="ToRole_ExceptionByVendorToAttach"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV.YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <atom:link rel="self" href="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/sap/YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://rc3vitsapapd1.ssmc.com:44320/sap/opu/odata/sap/YAPI_SUPPLIER_ORDER_MANAGEMENT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
