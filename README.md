@@ -39,3 +39,8 @@ An SAP Fiori application for Creating Order Exception by Buyer.
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
 
+
+2. Here Currently Downloading excel with validations like always column1 <= column2
+3. Also added a predefined static dropdown for Status feild 
+
+
